@@ -5,32 +5,39 @@ public class Electricity_bill
 	public static void main(String[] args)
 	{
 	  	Scanner sc=new Scanner(System.in);
-	  	System.out.println("If units are up to 100 == choose 1");
-	  	System.out.println("\nIf units are up to 100 to 300 == choose 2");
-	  	System.out.println("\n\nEnter your choice =");
-		int ch=sc.nextInt();
+	  	;
+	  	System.out.println("\nEnter your unit =");
+		int unit=sc.nextInt();
 		
-    
-     switch(ch)
-     {
-     case 1:
-    	 for(int i=1;i<=100;i++ );
+      
+        double money;
+     
+    	 
+    	 if(unit>0 && unit<=100)
          {
           System.out.println("Charges =1.20rs.perunit");
+          money=unit*1.20;
+          System.out.println("Total Charges="+money);
          }
-         break;
-     case 2:
-    	 for(int i=100;i<=300;i++ );
+        
+    	 else if(unit>100 && unit<=300)
          {
           System.out.println("Charges =2rs.perunit");
+          money=unit*2.0;
+          System.out.println("Total Charges="+money);
          }
-         break;
-     default :    
-         for(int i=1;i<=300;i++ );
+   
+         else if(unit>300)
          {
           System.out.println("Charges =3rs.perunit");
+          money=unit*3.0;
+          System.out.println("Total Charges="+money);
          }
-     }
+         else 
+         {
+        	
+             System.out.println("Sorry not Available");
+         }
 	}
 
 }
