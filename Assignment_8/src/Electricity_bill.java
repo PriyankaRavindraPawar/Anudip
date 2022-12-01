@@ -5,7 +5,7 @@ public class Electricity_bill
 	public static void main(String[] args)
 	{
 	  	Scanner sc=new Scanner(System.in);
-	  	;
+	  	
 	  	System.out.println("\nEnter your unit =");
 		int unit=sc.nextInt();
 		
