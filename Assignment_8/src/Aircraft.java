@@ -15,19 +15,14 @@ public class Aircraft {
             a[i]=sc.nextInt();
           
         	sum+=a[i];
-        	
+        	 if(a[i]<0)
+        	 {
+               	System.out.println("Invalid Input");
+              }
        //  String result=(n>0)?"Positive":"Negative";
          //        System.out.println(result);
           }
           System.out.println("Real prime numbers : " + Arrays.toString(a));
           System.out.println(sum);
-         
-          for(int i=0;i<n;i++)
-          {
-          if(a[i]<0)
-     	 {
-            	System.out.println("Invalid Input");
-           }
-}
-}
+        }
 }
