@@ -3,8 +3,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-
-
+import java.util.*;
 public class App 
 {
    
@@ -39,14 +38,16 @@ public static void main( String[] args )
 	Session ss=getCurrentSession();
 */
 	Configuration con=new Configuration().configure().addAnnotatedClass(Employee.class);
-   SessionFactory sf=con.buildSessionFactory();
+    SessionFactory sf=con.buildSessionFactory();
     Session ss=sf.openSession();
     Transaction T=ss.beginTransaction();
+    
     Employee e1=new Employee();
-    Employee e2=new Employee();
+    
     e1.setE_id(101);
     e1.setE_name("Pooja");
     e1.setDept("Hr");
+   
     E_address ad1=new E_address();
     
     ad1.setHname("Gokuldham");
@@ -54,24 +55,26 @@ public static void main( String[] args )
     ad1.setCity("Pune");
     ad1.setPincode(240034);
     
+    Employee e2=new Employee();
     e2.setE_id(102);
     e2.setE_name("Poonam");
     e2.setDept("AI");
-    E_address ad2=new E_address();
+   // E_address ad2=new E_address();
    
     
-    ad2.setHname("Saisrusti");
-    ad2.setArea("darvi");
-    ad2.setCity("Mumbai");
-    ad2.setPincode(240034);
+  //  ad2.setHname("Saisrusti");
+   // ad2.setArea("darvi");
+    //ad2.setCity("Mumbai");
+    //ad2.setPincode(240034);
    
     e1.setE_address(ad1);
-    e2.setE_address(ad2);
+  //  e2.setE_address(ad2);
     ss.save(e1);
-    ss.save(e2);
+    //ss.save(e2);
     T.commit();
+    ss.close();
 	
-	
+	System.out.println("Hello");
 }
 
 
