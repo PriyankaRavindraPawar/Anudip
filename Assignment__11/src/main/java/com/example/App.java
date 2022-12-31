@@ -61,4 +61,9 @@ public class App
     	
         System.out.println( "Hello World!" );
     }
+
+	public static Session config() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
